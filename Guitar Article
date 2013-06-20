@@ -1,0 +1,57 @@
+Lets start with a basic "rhythm guitar" song. Normally these are written as a progression of chords to be played by the guitarist, arranged with notation explaining how many measures each chord should be played. Chords are in turn composed of individual notes. The guitarist is free to choose how to play each chord to play, including and up to choosing the chord form and strumming pattern
+
+
+Definitions: Notes, Chords, Strings, Tunings, Chord Forms
+
+Here we assume the notes all belong to the 12 note equal temperament tuning system. This is a decent assumption for the western 6 string guitar, as most have frets placed according to this pattern.
+
+Notes: We represent each note as pair (p, o), which consists of a pitch p \in {1.. 12}, and an octave o \in {1, 2, 3 ...}.
+
+Pitches are in 1-1 correspondence with standard note names. Pitch 1 is the standard C note, and each successive pitch represents an increase of half a tone, covering a whole octave. Thus the pitches 1..12 correspond to the standard names C, C#, D, D#, E, F, F#, G, G#, A, A#, B.
+
+Chords: We let each chord c be an arbitrary set of at most 6 pitches. Note that a given chord can be realized in more than one way by using notes from different octaves.
+
+Example: The 'D Major Seventh' chord {2, 5, 10} may be sounded in many ways, for example using notes (2,2), (5,2), (10,2), or notes (5,2), (2, 3), (10,4).
+
+Songs: A basic rhythm guitar song S thus consists of a sequence [c_1 .., c_n] of n chords. To simplify things, say each chord is played for a half measure. These are very basic songs, like you might play in a campfire singalong.
+
+Given a song, a player must choose a tuning. We address this next.
+
+
+Strings: A tuned string s = (b, n) consists of a base note b, and a number of frets available to the string. The player may use the string and frets together to play n+1 notes. A tuned string's pitch is called it's "base pitch".
+
+Example: a string s = ((9,2), 10) starts at the 9th tone of the second octave, and has notes (9,2), (10,2), (11,2), (12,2), (1,3) .., (7,3). The base pitch of s is just 9.
+
+Tunings: A guitar tuning consists G = [s_1,..., s_6] of 6 tuned strings. A simplified tuning consists of only base pitches and no other string information
+
+Example. The standard turning on a guitar is (E2 A2 D3 G3 B3 E4), where each string has 20 frets. In our scheme, this translates into what we'll call the standard tuning, S = (((5,2),20), ((10,2),20), ((3,3),20), ((8,3),20), ((12,3),20), ((5,4),20)). The simplified standard tuning is [5, 10, 2, 8, 12, 5].
+
+So far we have notes, chords, tuned strings, guitar turnings. Now comes a harder part: to play a chord, the player must realize it using a chord form.
+
+
+Chord Forms: Given a chord c and a guitar tuning G, let F(c, G) be the set of ways we can express the  of c using G's strings. We call the elements of F(c, G) the "G chord forms of c." We say F(c) = F(c, S) is the set of standard chord forms of c.
+
+Now, each chord form f \in F(c, G) may be represented as a 6-tuple of finger positions required to play that form. Two caveats: if a given string is played open in the chord form, we assign a 0, and if the string is not used at all, assign a placeholder symbol x. We call this representation the chord form notation. The example should make this clearer:
+
+Example: Take the D Major chord, Dmaj = {10, 3, 7}. We may play this chord using the chord forms f_1 = (x, x, x, 2, 3, 2) and . Another realization is f_2 = (x, x, 7, 7, 7, x). These two chord forms in fact play the exact same notes, and are said to be equivalent chord forms.
+
+If two chord forms f_1 and f_2 represent not only the same chord, but also sound the same notes, we say f_1 and f_2 are equivalent. It's clear that equivalence of chord forms is an equivalence relation on F(c, G), and thus we may partition F(c, G) into classes of equivalent forms. 
+
+Let f be a chord form. It's perhaps not difficult to see that there is a chord c such that  F(c, G) contains f. Thus, given any form f, we write [f]_G to denote its class of equivalent forms in tuning G, and we write c(f, G) to denote its underlying chord. We write [f] to denote the equivalence class of f under standard tuning, and c(f) to denote its underlying chord. 
+
+Finally, write f^*_G to denote the most "efficient" or "easiest" chord form in [f]_G. This assumes that it is possible to place a bounded preorder on [f]_G.  This may not be well defined in general, since it is subjective an changes from playing session to playing session. To define it, we would likely depend on assumptions or data about how players would rate different hand positions. We'd likely strengthen the assumptions to allow a full objective function and attempt to estimate one such function that is applicable to players of a given skill.
+
+Example. Between the Dmaj chord forms f_1 and f_2 above, I find f_1 easier than f_2, since I'm not very adept at 'barring chords'
+
+
+Generating the different ways to form chords is fairly simple combinatorics. Estimating the subjective difficulty that players will feel 
+
+
+ My initial work shows that generating chord forms is fairly simple combinatorics over some equivalence classes. I feel like captain obvious there.
+
+The main problem is ordering the chord forms using a generated utility/rating function.
+
+Say the player performs an iterated exercise/trial where they are given two equivalent chords to play. After each trial they decide which hand position was easier to play correctly. How can we use that data to decide the player's chord rating function?
+
+
+If we have data from 10 or 100 players, can we improve the precision of the estimation process for a new player?
