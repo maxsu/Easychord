@@ -68,12 +68,19 @@ Let f be a chord form. There is a chord c such that  F(c, G) contains f. Thus, g
 
 # Ordering Chord Forms
 
-Finally, write f^*_G to denote the set of "efficient" or "easy" chord forms equivalent to a given chord from f. This assumes that it is possible to place a bounded preorder on [f]_G, in which case f^*_G consist of the maximal elements.  This preorder may not be well defined in general, since it is defined by the player's abilities and preferences, and subjective an changes from playing session to playing session as the player learns. To define it, we would likely depend on assumptions or data about how and individual player would rate different hand positions. We'd likely strengthen the assumptions to allow a full objective function and attempt to estimate one such function that is applicable to players of a given skill. If we use a rational objective function, f^*_G becomes a fully defined order, even.
+Finally, write f^*_G to denote the set of "efficient" or "easy" chord forms equivalent to a given chord from f. This assumes, for instance, that it is possible to place a bounded preorder on [f]_G. That is, we may suppose there is a relation ≤ on [f]_G such that for two chord forms f_1, f_2 \in [f]_G, we write f_1 ≤ f_2 if it makes sense to say f_2 is 'easier', or 'more efficient' to play than f_1. In this case f^*_G consist of the maximal elements of the preoprder ([f]_G, ≤).  This preorder may not be well defined in general, since it is defined by the player's abilities and preferences, and subjective an changes from playing session to playing session as the player learns. To define it, we would likely depend on assumptions or data about how and individual player would rate different hand positions. We'd likely strengthen the assumptions to allow a full utiliyu function and attempt to estimate one such function that is applicable to a given player, or a class of players of a given skill. If we use a rational objective function, f^*_G becomes a full pre-order, even.
 
-Example. Between the Dmaj chord forms f_1 and f_2 above, at the initial time of writing this, I found f_1 easier than f_2, since I was not very adept at 'barring chords'. Taking this as a challenge, I am now about even in skill in both forms of the chord. Which is not saying much!
+Example. Between the Dmaj chord forms f_1 and f_2 above, at the initial time of writing this (a couple of days ago), I found f_1 easier than f_2, since I was not very adept at 'barring chords'. Thus at the time, f_2 ≤ f_1 was the case. Taking this as a challenge, I am now about even in skill in both forms of the chord, and hence f_1 ≤ f_2 also applies.
 
+## Form height
+
+One simple metric of chord form complexity is the vertical height metric - ie, simply count the max spread between finger positions as the metric.
+
+Example: f_1 has a height of 1, while f_2 has a height of zero.
 
 References:
+
 https://en.wikipedia.org/wiki/Pitch_class
+
 https://en.wikipedia.org/wiki/Equal_temperament#Twelve-tone_equal_temperament
 
