@@ -1,4 +1,6 @@
-Lets start with a basic "rhythm guitar" song. Normally these are written as a progression of chords to be played by the guitarist, arranged with notation explaining how many measures each chord should be played. Chords are in turn composed of individual notes. The guitarist is free to choose how to play each chord to play, including and up to choosing the chord form and strumming pattern
+# Easychord
+
+We'll describe a system for representing simple chords and songs on a guitar, and hopefully grow it into a way of optimizing tunings and hand positions. We'll start with a basic "rhythm guitar" song. Normally these are written as a progression of chords to be played by the guitarist, arranged with notation explaining how many measures each chord should be played. Chords are in turn composed of individual notes. Outside of the selection of chords, the guitarist is free to choose how to play each chord to play, including and up to choosing the chord form and strumming pattern. We hope to help beginner and intermediate players pick chord forms that are easy to learn and play.
 
 
 # Definitions: Notes, Pitches, Chords, Songs, Strings, Tunings, Chord Forms
@@ -73,4 +75,5 @@ Example. Between the Dmaj chord forms f_1 and f_2 above, at the initial time of 
 
 References:
 https://en.wikipedia.org/wiki/Pitch_class
+https://en.wikipedia.org/wiki/Equal_temperament#Twelve-tone_equal_temperament
 
